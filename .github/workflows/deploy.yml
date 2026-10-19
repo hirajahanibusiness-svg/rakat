@@ -17,7 +17,7 @@ jobs:
       - uses: subosito/flutter-action@v2
         with: { channel: stable }
       - run: flutter create --platforms web .
-      - run: ./setup_offline.sh
+      - run: bash setup_offline.sh
       - name: add bridge script to index.html
         run: sed -i 's#</head>#<script type="module" src="pose_bridge.js"></script></head>#' web/index.html
       - run: flutter pub get
